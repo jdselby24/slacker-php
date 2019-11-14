@@ -4,6 +4,9 @@ namespace Slacker\models\db;
 
 use PDO;
 
+/**
+ * Model for user functions in the DB
+ */
 class UserModel
 {
 

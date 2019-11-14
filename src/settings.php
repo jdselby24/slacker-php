@@ -18,8 +18,8 @@ return [
 
         'DB_settings' => [
             'dsn' => "mysql:host=127.0.0.1;dbname=slacker",
-            'username' => 'root',
+            'user' => 'root',
             'password' => 'password'
-        ]
+        ],
     ],
 ];
