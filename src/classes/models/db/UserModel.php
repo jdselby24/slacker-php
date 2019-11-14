@@ -32,7 +32,7 @@ class UserModel
      *
      * @return array Asscoc array of users unames
      */
-    function get_users() :array {
+    public function get_users() : array {
         $userListQuery = "SELECT `uname` FROM `users`";
         $query = $this->db->prepare($userListQuery);
         $query->execute();
@@ -47,14 +47,13 @@ class UserModel
      * @param string $hash Users password (prehashed)
      * @return boolean Returns true/false for DB query success
      */
-    function add_user(string $user, string $hash) :bool {
+    public function add_user(string $user, string $hash) : bool {
 
         $userCreateQuery = "INSERT INTO `users` (`uname`,`hash`) VALUES (:username, :passhash)";
         $query = $this->db->prepare($userCreateQuery);
         $query->bindParam(":username", $user, PDO::PARAM_STR);
         $query->bindParam(":passhash", $hash, PDO::PARAM_STR);
         $success = $query->execute();
-    
         return $success;
     }
 
@@ -64,14 +63,13 @@ class UserModel
      * @param string $user The username of the user
      * @return string The password hash for the specified user
      */
-    function get_user_pass_hash(string $user) :string {
+    public function get_user_pass_hash(string $user) : string {
 
         $userHashQuery = "SELECT `hash` FROM `users` WHERE `uname` = :user";
         $query = $this->db->prepare($userHashQuery);
         $query->bindParam(':user', $user, PDO::PARAM_STR);
         $query->execute();
         $userHash = $query->fetch();
-    
         return $userHash['hash'];
     }
 
