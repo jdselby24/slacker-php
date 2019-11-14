@@ -73,6 +73,20 @@ class UserModel
         return $userHash['hash'];
     }
 
-
-
+    /**
+     * Checks if specified username is used
+     *
+     * @param string $usern Username to check
+     * @return boolean true/false for if username in use
+     */
+    public function user_exists(string $user) : bool {
+        $haystack = $this->get_users();
+        $strict = false;
+        foreach ($haystack as $item) {
+            if (($strict ? $item === $user : $item == $user) || (is_array($item) && in_array_r($user, $item, $strict))) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
