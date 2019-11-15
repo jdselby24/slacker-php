@@ -35,7 +35,6 @@ class LoginController
         }
 
         if(password_verify($password, $passHash)) {
-            // TODO: Finish transfering functionality, add message functions to a MessageModel class
             $token = $this->TokenModel->generate_login_token($username);
             $token_added = $this->TokenModel->set_token_inactive($username, $token);
         } else {
