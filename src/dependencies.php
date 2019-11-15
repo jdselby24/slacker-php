@@ -2,8 +2,7 @@
 
 use Slim\App;
 use PDO;
-
-use Slacker\factories\models\db;
+use Slacker\factories\models\db\MessageModelFactory;
 use Slacker\factories\models\db\TokenModelFactory;
 use Slacker\factories\models\db\UserModelFactory;
 
@@ -38,5 +37,5 @@ return function (App $app) {
     // FACTORIES
     $container['UserModel'] = new UserModelFactory();
     $container['TokenModel'] = new TokenModelFactory();
-
+    $container['MessageModel'] = new MessageModelFactory();
 };

@@ -8,7 +8,7 @@ use Slacker\models\db\MessageModel;
 /**
  * Factory for MessageModel, injecting a PDO object
  */
-class TokenModelFactory 
+class MessageModelFactory
 {
     function __invoke(ContainerInterface $container) : MessageModel
     {
