@@ -6,7 +6,7 @@ use Psr\Container\ContainerInterface;
 use Slacker\models\db\TokenModel;
 
 /**
- * Factory for UserModel, injecting a PDO object
+ * Factory for TokenModel, injecting a PDO object
  */
 class TokenModelFactory 
 {
