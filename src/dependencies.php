@@ -1,7 +1,6 @@
 <?php
 
 use Slim\App;
-use PDO;
 use Slacker\factories\controllers\app\MainAppControllerFactory;
 use Slacker\factories\controllers\user\AddUserControllerFactory;
 use Slacker\factories\controllers\user\LoginControllerFactory;
@@ -32,8 +31,8 @@ return function (App $app) {
      */
     $container['db'] = function ($c) : PDO {
         $db_settings = $c->get('settings')['DB_settings'];
-        $db = new PDO($db_settings['dsn'], $db_settings['user'], $db_settings['password']);
-        $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+        $db = new \PDO($db_settings['dsn'], $db_settings['user'], $db_settings['password']);
+        $db->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_ASSOC);
         return $db;
     };
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Slacker\factories\controllers\app;
+namespace Slacker\controllers\app;
 
 use Slim\Http\Request;
 use Slim\Http\Response;
@@ -17,7 +17,7 @@ class MainAppController
 
     public function __invoke(Request $request, Response $reponse, array $args)
     {
-        return $this->renderer($reponse, 'app.phtml');
+        return $this->renderer->render($reponse, 'app.phtml');
     }
 
 }

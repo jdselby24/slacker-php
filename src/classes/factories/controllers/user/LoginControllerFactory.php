@@ -16,7 +16,7 @@ class LoginControllerFactory
 
         $userModel = $container->get('UserModel');
         $tokenModel = $container->get('TokenModel');
-        $messageModel = $container->('MessageModel');
+        $messageModel = $container->get('MessageModel');
 
         return new LoginController($userModel, $tokenModel, $messageModel);
     }

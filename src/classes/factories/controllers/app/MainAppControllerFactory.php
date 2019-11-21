@@ -3,7 +3,7 @@
 namespace Slacker\factories\controllers\app;
 
 use Psr\Container\ContainerInterface;;
-use Slacker\factories\controllers\app\MainAppController;
+use Slacker\controllers\app\MainAppController;
 
 class MainAppControllerFactory
 {
