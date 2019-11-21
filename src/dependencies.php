@@ -2,6 +2,8 @@
 
 use Slim\App;
 use PDO;
+use Slacker\factories\controllers\user\AddUserControllerFactory;
+use Slacker\factories\controllers\user\LoginControllerFactory;
 use Slacker\factories\models\db\MessageModelFactory;
 use Slacker\factories\models\db\TokenModelFactory;
 use Slacker\factories\models\db\UserModelFactory;
@@ -38,4 +40,6 @@ return function (App $app) {
     $container['UserModel'] = new UserModelFactory();
     $container['TokenModel'] = new TokenModelFactory();
     $container['MessageModel'] = new MessageModelFactory();
+    $container['AddUserController'] = new AddUserControllerFactory();
+    $container['LoginController'] = new LoginControllerFactory();
 };
