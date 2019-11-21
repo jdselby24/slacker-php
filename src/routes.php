@@ -7,4 +7,6 @@ use Slim\Http\Response;
 return function (App $app) {
     $container = $app->getContainer();
 
+    $app->get('/app', 'MainAppController');
+
 };
