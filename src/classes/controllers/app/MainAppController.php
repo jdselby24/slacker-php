@@ -1,5 +1,6 @@
 <?php
 
+namespace Slacker\factories\controllers\app;
 
 use Slim\Http\Request;
 use Slim\Http\Response;
